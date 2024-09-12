@@ -1,1 +1,2 @@
-print("bdk flafel")"
+print("bdk flafel")
+print("i wrote this im hazem")
