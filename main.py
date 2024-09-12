@@ -4,3 +4,4 @@ print("llll")
 #ana 
 =======
 >>>>>>> Stashed changes
+"cristiano hl tsm3ni "
