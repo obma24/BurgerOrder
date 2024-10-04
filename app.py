@@ -40,3 +40,25 @@ def place_order():
         'items': cart  # Beställningen innehåller varorna i varukorgen
     }
     orders.append(order)  # Lägger till beställningen i listan med beställningar
+    
+    try:
+
+        conn = http.client.HTTPConnection('localhost', 5001)
+
+        headers = {'Content-type': 'application/json'}
+
+        conn.request('POST', '/kitchen/orders', body=json.dumps(order), headers=headers)
+
+        response = conn.getresponse()
+
+        if response.status != 200:
+
+            print(f"Kunde inte skicka beställning till köket: {response.reason}")
+
+        conn.close()
+
+    except Exception as e:
+
+        print(f"Kunde inte skicka beställning till köket: {e}") 
+
+
