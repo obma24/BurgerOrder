@@ -22,3 +22,21 @@ def view_cart():
     return jsonify(cart),200
 @app.route('/remove_from_cart,methods=['POST'])
 def remove_from_cart(): 
+    data = request.json
+    index = data.get('index')
+    if 0 <= index <len(cart):
+       cart.pop(index) #Tar bort varan
+       return jsonify({"status":"error","messege":"Ogiltigt index"
+400
+@app.route('/place_order', methods=['POST'])
+def place_order():
+    if not cart:
+        return jsonify({"status": "error", "message": "Varukorgen är tom"}), 400
+    receipt_number = random.randint(1000, 9999)  # Skapar ett slumpmässigt kvittonummer
+    order = {
+
+        'receiptNumber': receipt_number,
+
+        'items': cart  # Beställningen innehåller varorna i varukorgen
+    }
+    orders.append(order)  # Lägger till beställningen i listan med beställningar
