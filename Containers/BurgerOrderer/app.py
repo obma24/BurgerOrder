@@ -25,8 +25,8 @@ def remove_from_cart():
     data = request.json
     index = data.get('index')
     if 0 <= index <len(cart):
-       cart.pop(index) #Tar bort varan
-       return jsonify({"status":"error","messege":"Ogiltigt index"
+    cart.pop(index) #Tar bort varan
+    return jsonify({"status":"error","messege":"Ogiltigt index"
 400
 @app.route('/place_order', methods=['POST'])
 def place_order():
