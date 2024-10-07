@@ -1,64 +1,43 @@
-from flask import Flask, request, jsonify, render_template
-import random
-import http.client
-import json
+from flask import Flask, render_template, request, redirect, url_for, session
+import requests
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
-cart = []
-orders = []
+BURGERS = ['Cheeseburger', 'Bacon Burger', 'Vegan Burger']
+CUSTOMIZATIONS = CUSTOMIZATIONS = ['Extra Cheese', 'No Pickles', 'Lettuce Wrap', 'Double Patty']
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/', methods=['GET', 'POST'])
+def order():
+    if 'cart' not in session:
+        session['cart'] = []
 
-@app.route('/add_to_cart', methods=['POST'])
-def add_to_cart():
-    data = request.json
-    cart.append(data)
-    return jsonify({"status": "success"}), 200
-@app.route('/view_cart,methods=['GET']
-def view_cart():
-    return jsonify(cart),200
-@app.route('/remove_from_cart,methods=['POST'])
-def remove_from_cart(): 
-    data = request.json
-    index = data.get('index')
-    if 0 <= index <len(cart):
-    cart.pop(index) #Tar bort varan
-    return jsonify({"status":"error","messege":"Ogiltigt index"
-400
-@app.route('/place_order', methods=['POST'])
-def place_order():
-    if not cart:
-        return jsonify({"status": "error", "message": "Varukorgen är tom"}), 400
-    receipt_number = random.randint(1000, 9999)  # Skapar ett slumpmässigt kvittonummer
-    order = {
+    if request.method == 'POST':
+        if request.form.get('action') == 'add':
+            burger_choice = request.form.get('burger')
+            customization_choice = request.form.getlist('customizations')
 
-        'receiptNumber': receipt_number,
+            order = {
+                'burger': burger_choice,
+                'customizations': customization_choice
+            }
+            session['cart'].append(order)
+            session.modified = True
 
-        'items': cart  # Beställningen innehåller varorna i varukorgen
-    }
-    orders.append(order)  # Lägger till beställningen i listan med beställningar
-    
-    try:
+        elif request.form.get('action') == 'remove':
+            index_to_remove = int(request.form.get('index'))
+            session['cart'].pop(index_to_remove)
+            session.modified = True
 
-        conn = http.client.HTTPConnection('localhost', 5001)
+        elif request.form.get('action') == 'place_order':
+            for order in session['cart']:
+                requests.post('http://kitchen:5001/new_order', json=order)
+            session['cart'] = [] 
+            session.modified = True
 
-        headers = {'Content-type': 'application/json'}
+        return redirect(url_for('order'))
 
-        conn.request('POST', '/kitchen/orders', body=json.dumps(order), headers=headers)
+    return render_template('index.html', burgers=BURGERS, customizations=CUSTOMIZATIONS, cart=session['cart'])
 
-        response = conn.getresponse()
-
-        if response.status != 200:
-
-            print(f"Kunde inte skicka beställning till köket: {response.reason}")
-
-        conn.close()
-
-    except Exception as e:
-
-        print(f"Kunde inte skicka beställning till köket: {e}") 
-
-
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
