@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Order</title>
+</head>
+<body>
+    <header>
+        <h1>Order Your Burger</h1>
+    </header>
+
+    <div>
+        <form method="POST">
+            <h2>Select a Burger:</h2>
+            {% for burger in burgers %}
+            <div>
+                <input type="radio" name="burger" value="{{ burger }}" required> {{ burger }}
+            </div>
+            {% endfor %}
+            <h2>Customizations:</h2>
+            {% for customization in customizations %}
+            <div>
+                <input type="checkbox" name="customizations" value="{{ customization }}"> {{ customization }}
+            </div>
+            {% endfor %}
+            <button type="submit" name="action" value="add">Add to Cart</button>
+        </form>
+    </div>
+
+    <div>
+        <h2>Your Cart</h2>
+        {% if cart %}
+            {% for order in cart %}
+            <div>
+                <h3>Burger: {{ order.burger }}</h3>
+                <p>Customizations: {{ order.customizations | join(', ') }}</p>
+                <form method="POST" style="display:inline;">
+                    <input type="hidden" name="index" value="{{ loop.index0 }}">
+                    <button type="submit" name="action" value="remove">Remove from Cart</button>
+                </form>
+            </div>
+            {% endfor %}
+            <form method="POST">
+                <button type="submit" name="action" value="place_order">Place Order</button>
+            </form>
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Burger Order App</p>
+        <p>Obada & Hazem & Yaman & Mamoon & Baraa</p>
+    </footer>
+</body>
+</html>
