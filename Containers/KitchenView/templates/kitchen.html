@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Orders</title>
+</head>
+<body>
+    <header>
+        <h1>Orders in the Kitchen</h1>
+    </header>
+    
+    <div>
+        {% for order in orders %}
+        <div>
+            <h3>Burger: {{ order.burger }}</h3>
+            <p>Customizations: {{ order.customizations | join(', ') }}</p>
+        </div>
+        {% else %}
+        <p>No orders yet.</p>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BurgerOrderer App</p>
+        <p>Obada & Hazem & Yaman & Mamoon & Baraa</p>
+    </footer>
+</body>
+</html>
