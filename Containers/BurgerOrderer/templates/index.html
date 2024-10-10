@@ -4,13 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger Order</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .order {
+            background-color: #fff4cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .order h3 {
+            margin: 0;
+            color: #d68f00;
+        }
+
+        .order p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Order Your Burger</h1>
     </header>
 
-    <div>
+    <div class="container">
         <form method="POST">
             <h2>Select a Burger:</h2>
             {% for burger in burgers %}
@@ -24,25 +109,25 @@
                 <input type="checkbox" name="customizations" value="{{ customization }}"> {{ customization }}
             </div>
             {% endfor %}
-            <button type="submit" name="action" value="add">Add to Cart</button>
+            <button type="submit" name="action" value="add" class="button">Add to Cart</button>
         </form>
     </div>
 
-    <div>
+    <div class="container">
         <h2>Your Cart</h2>
         {% if cart %}
             {% for order in cart %}
-            <div>
+            <div class="order">
                 <h3>Burger: {{ order.burger }}</h3>
                 <p>Customizations: {{ order.customizations | join(', ') }}</p>
                 <form method="POST" style="display:inline;">
                     <input type="hidden" name="index" value="{{ loop.index0 }}">
-                    <button type="submit" name="action" value="remove">Remove from Cart</button>
+                    <button type="submit" name="action" value="remove" class="button">Remove from Cart</button>
                 </form>
             </div>
             {% endfor %}
             <form method="POST">
-                <button type="submit" name="action" value="place_order">Place Order</button>
+                <button type="submit" name="action" value="place_order" class="button">Place Order</button>
             </form>
         {% else %}
             <p>Your cart is empty.</p>
