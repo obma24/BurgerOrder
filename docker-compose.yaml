@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   burgerorderer:
     build: ./Containers/BurgerOrderer
@@ -5,8 +7,20 @@ services:
       - "5000:5000"
     depends_on:
       - kitchen
+      - mongo
 
   kitchen:
     build: ./Containers/KitchenView
     ports:
       - "5001:5001"
+
+  mongo:
+    image: mongo
+    container_name: mongoo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
