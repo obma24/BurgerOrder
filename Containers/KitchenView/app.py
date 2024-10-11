@@ -10,8 +10,8 @@ def kitchen():
 
 @app.route('/new_order', methods=['POST'])
 def new_order():
-    order = request.get_json()
-    orders.append(order)
+    full_order = request.get_json()
+    orders.append(full_order)
     return '', 200
 
 if __name__ == '__main__':

@@ -66,12 +66,15 @@
     <header>
         <h1>Orders in the Kitchen</h1>
     </header>
-    
+   
     <div class="container">
         {% for order in orders %}
         <div class="order">
-            <h3>Burger: {{ order.burger }}</h3>
-            <p>Customizations: {{ order.customizations | join(', ') }}</p>
+            <h3>Order:</h3>
+            {% for burger in order.burgers %}
+            <p><strong>Burger:</strong> {{ burger.burger }}</p>
+            <p><strong>Customizations:</strong> {{ burger.customizations | join(', ') }}</p>
+            {% endfor %}
         </div>
         {% else %}
         <p>No orders yet.</p>
