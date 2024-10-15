@@ -123,7 +123,7 @@
                                 orderHTML += '<p><strong>Burger:</strong> ' + burger.burger + '</p>' +
                                             '<p><strong>Customizations:</strong> ' + burger.customizations.join(', ') + '</p>';
                             });
-                            orderHTML += '<button class="cancel-button" onclick="cancelOrder(\'' + index + '\')">No Orders yet.</button></div>';
+                            orderHTML += '<button class="cancel-button" onclick="cancelOrder(\'' + index + '\')">Cancel Order</button></div>';
                             ordersContainer.innerHTML += orderHTML;
                         });
                     } else {
