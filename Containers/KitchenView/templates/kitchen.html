@@ -93,11 +93,11 @@
                     <p><strong>Customizations:</strong> {{ burger.customizations | join(', ') }}</p>
                     {% endfor %}
                 </div>
-                <button class="cancel-button" onclick="cancelOrder('{{ loop.index0 }}')">Avbryt Beställning</button>
+                <button class="cancel-button" onclick="cancelOrder('{{ loop.index0 }}')">Cancel Order</button>
             </div>
             {% endfor %}
         {% else %}
-            <p>Inga beställningar ännu.</p>
+            <p>No Orders yet.</p>
         {% endif %}
     </div>
 
@@ -123,11 +123,11 @@
                                 orderHTML += '<p><strong>Burger:</strong> ' + burger.burger + '</p>' +
                                             '<p><strong>Customizations:</strong> ' + burger.customizations.join(', ') + '</p>';
                             });
-                            orderHTML += '<button class="cancel-button" onclick="cancelOrder(\'' + index + '\')">Avbryt Beställning</button></div>';
+                            orderHTML += '<button class="cancel-button" onclick="cancelOrder(\'' + index + '\')">No Orders yet.</button></div>';
                             ordersContainer.innerHTML += orderHTML;
                         });
                     } else {
-                        ordersContainer.innerHTML = '<p>Inga beställningar ännu.</p>';
+                        ordersContainer.innerHTML = '<p>No Orders yet.</p>';
                     }
                 }
             };
