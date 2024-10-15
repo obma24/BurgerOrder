@@ -63,16 +63,16 @@ def order():
             session['cart'].pop(index_to_remove)  # Tar bort order från varukorgen
             session.modified = True  # Markerar sessionen som ändrad
 
-        # Hantera placera order
         elif request.form.get('action') == 'place_order':
             final_order = {
-                'burgers': session['cart']  # Skapa en slutgiltig order med varukorgens innehåll
+                'burgers': session['cart']
             }
-            requests.post('http://kitchen:5001/new_order', json=final_order)  # Skicka order till KitchenView (port 5001)
-            session['cart'] = []  # Töm varukorgen efter beställning
-            session.modified = True  # Markerar sessionen som ändrad
+            requests.post('http://kitchen:5001/new_order', json=final_order)
+            order_confirmed = final_order 
+            session['cart'] = []
+            session.modified = True
 
-        return redirect(url_for('order'))  # Omdirigera tillbaka till order-sidan
+            return redirect(url_for('order', order_confirmed=order_confirmed)) 
 
     # Hämta data för hamburgare och anpassningar
     burgers_from_db = fetch_burgers_from_db()
@@ -83,7 +83,7 @@ def order():
     CUSTOMIZATIONS = [customization['name'] for customization in customizations_from_db]
 
     # Rendera HTML-mall med data
-    return render_template('index.html', burgers=BURGERS, customizations=CUSTOMIZATIONS, cart=session['cart'])
+    return render_template('index.html', burgers=BURGERS, customizations=CUSTOMIZATIONS, cart=session['cart'], order_confirmed=request.args.get('order_confirmed', None))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)  # Startar Flask-applikationen
