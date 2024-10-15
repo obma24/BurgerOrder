@@ -134,11 +134,11 @@
         {% endif %}
     </div>
 
-    {% if order_confirmed %}
+    {% if session.confirmed_order %}
     <div class="container">
         <h2>Order Confirmed!</h2>
         <p>Your order has been confirmed with the following details:</p>
-        {% for order in order_confirmed.burgers %}
+        {% for order in session.confirmed_order.burgers %}
             <div class="order">
                 <h3>Burger: {{ order.burger }}</h3>
                 <p>Customizations: {{ order.customizations | join(', ') }}</p>
