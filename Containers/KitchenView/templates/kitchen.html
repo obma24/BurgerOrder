@@ -66,8 +66,8 @@
     <header>
         <h1>Orders in the Kitchen</h1>
     </header>
-   
-    <div class="container">
+
+    <div class="container" id="ordersContainer">
         {% for order in orders %}
         <div class="order">
             <h3>Order:</h3>
@@ -85,5 +85,36 @@
         <p>&copy; 2024 BurgerOrderer App</p>
         <p>Obada & Hazem & Yaman & Mamoon & Baraa</p>
     </footer>
+
+    <script>
+        function fetchOrders() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/get_orders', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var orders = JSON.parse(xhr.responseText);
+                    var ordersContainer = document.getElementById('ordersContainer');
+                    ordersContainer.innerHTML = '';
+
+                    if (orders.length > 0) {
+                        orders.forEach(function(order) {
+                            var orderHTML = '<div class="order"><h3>Order:</h3>';
+                            order.burgers.forEach(function(burger) {
+                                orderHTML += '<p><strong>Burger:</strong> ' + burger.burger + '</p>' +
+                                            '<p><strong>Customizations:</strong> ' + burger.customizations.join(', ') + '</p>';
+                            });
+                            orderHTML += '</div>';
+                            ordersContainer.innerHTML += orderHTML;
+                        });
+                    } else {
+                        ordersContainer.innerHTML = '<p>No orders yet.</p>';
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        setInterval(fetchOrders, 5000);
+    </script>
 </body>
 </html>
