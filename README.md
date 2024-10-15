@@ -1,16 +1,16 @@
-BurgerOrderer är en applikation där du enkelt kan beställa och anpassa hamburgare, välja dina favorit-tillbehör, och sedan har möjligheten att antingen ta bort från varukorgen eller bekräfta beställningen. De bekräftade beställningarna skickas sedan direkt till köket.
+BurgerOrderer is an application where you can easily order and customize burgers, choose your favorite toppings, and then have the option to either remove from the cart or confirm the order. The confirmed orders are then sent directly to the kitchen.
 
-# Så här startar du applikationen!
+# This is how you start the application!
 
-# Steg-för-steg-instruktioner:
-Steg 1: Starta applikationen Docker Desktop. Se till att Docker Desktop är installerat och körs på din dator.
+# Step-by-step instructions:
+Step 1: Start the Docker Desktop application. Make sure Docker Desktop is installed and running on your computer.
 
-Steg 2: Öppna terminalen i Visual Studio Code (VSCode). Genom att gå till menyn "Terminal" och välja "Ny terminal".
+Step 2: Open the terminal in Visual Studio Code (VSCode). By going to the "Terminal" menu and selecting "New Terminal".
 
-Steg 3: Mata in följande kommando i terminalen för att bygga och köra applikationen:
- # "docker-compose up --build"
+Step 3: Enter the following command in the terminal to build and run the application:
+ ## docker-compose up --build
 
-Steg 4: Öppna webbläsaren och navigera till följande länkar för att komma åt applikationen:
-   - För att börja beställa hamburgare, öppna [BurgerOrderer](http://localhost:5000). Detta ger dig tillgång till applikationen där du kan se och anpassa hamburgare.
+Step 4: Open the browser and navigate to the following links to access the application:
+ - To start ordering burgers, open [BurgerOrderer](http://localhost:5000). This gives you access to the application where you can view and customize burgers.
 
-   - För kökspersonalen att se inkomna beställningar, öppna [KitchenView](http://localhost:5001). Här kan kökspersonalen se alla beställningar i realtid.
+ - For the kitchen staff to view incoming orders, open [KitchenView](http://localhost:5001). Here, the kitchen staff can see all orders in real time.
