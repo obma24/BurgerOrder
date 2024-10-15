@@ -54,6 +54,21 @@
             color: #555;
         }
 
+        .cancel-button {
+            background-color: #d9534f; /* Röd bakgrundsfärg */
+            color: white; /* Vit textfärg */
+            border: none; /* Ingen kantlinje */
+            padding: 10px 15px; /* Inre marginaler */
+            border-radius: 5px; /* Rundade hörn */
+            cursor: pointer; /* Handpekare vid hovring */
+            font-size: 1em; /* Större textstorlek */
+            transition: background-color 0.3s; /* Övergångseffekt */
+        }
+
+        .cancel-button:hover {
+            background-color: #c9302c; /* Mörkare röd vid hovring */
+        }
+
         footer {
             margin-top: 30px;
             text-align: center;
@@ -68,17 +83,22 @@
     </header>
 
     <div class="container" id="ordersContainer">
-        {% for order in orders %}
-        <div class="order">
-            <h3>Order:</h3>
-            {% for burger in order.burgers %}
-            <p><strong>Burger:</strong> {{ burger.burger }}</p>
-            <p><strong>Customizations:</strong> {{ burger.customizations | join(', ') }}</p>
+        {% if orders %}
+            {% for order in orders %}
+            <div class="order" id="order-{{ loop.index0 }}">
+                <h3>Order:</h3>
+                <div class="order-details">
+                    {% for burger in order.burgers %}
+                    <p><strong>Burger:</strong> {{ burger.burger }}</p>
+                    <p><strong>Customizations:</strong> {{ burger.customizations | join(', ') }}</p>
+                    {% endfor %}
+                </div>
+                <button class="cancel-button" onclick="cancelOrder('{{ loop.index0 }}')">Avbryt Beställning</button>
+            </div>
             {% endfor %}
-        </div>
         {% else %}
-        <p>No orders yet.</p>
-        {% endfor %}
+            <p>Inga beställningar ännu.</p>
+        {% endif %}
     </div>
 
     <footer>
@@ -97,17 +117,17 @@
                     ordersContainer.innerHTML = '';
 
                     if (orders.length > 0) {
-                        orders.forEach(function(order) {
-                            var orderHTML = '<div class="order"><h3>Order:</h3>';
+                        orders.forEach(function(order, index) {
+                            var orderHTML = '<div class="order" id="order-' + index + '"><h3>Order:</h3>';
                             order.burgers.forEach(function(burger) {
                                 orderHTML += '<p><strong>Burger:</strong> ' + burger.burger + '</p>' +
                                             '<p><strong>Customizations:</strong> ' + burger.customizations.join(', ') + '</p>';
                             });
-                            orderHTML += '</div>';
+                            orderHTML += '<button class="cancel-button" onclick="cancelOrder(\'' + index + '\')">Avbryt Beställning</button></div>';
                             ordersContainer.innerHTML += orderHTML;
                         });
                     } else {
-                        ordersContainer.innerHTML = '<p>No orders yet.</p>';
+                        ordersContainer.innerHTML = '<p>Inga beställningar ännu.</p>';
                     }
                 }
             };
@@ -115,6 +135,25 @@
         }
 
         setInterval(fetchOrders, 5000);
+
+        function cancelOrder(orderIndex) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('DELETE', '/cancel_order/' + orderIndex, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var orderElement = document.getElementById('order-' + orderIndex);
+                        if (orderElement) {
+                            orderElement.remove();
+                        }
+                        alert('Beställningen har avbrutits.');
+                    } else {
+                        alert('Fel: Beställningen kunde inte avbrytas.');
+                    }
+                }
+            };
+            xhr.send();
+        }
     </script>
 </body>
 </html>

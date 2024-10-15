@@ -18,5 +18,12 @@ def new_order():
 def get_orders():
     return jsonify(orders)
 
+@app.route('/cancel_order/<int:index>', methods=['DELETE'])
+def cancel_order(index):
+    if 0 <= index < len(orders):
+        orders.pop(index)
+        return '', 200
+    return 'Beställning hittades inte', 404
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
