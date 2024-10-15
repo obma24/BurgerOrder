@@ -134,6 +134,19 @@
         {% endif %}
     </div>
 
+    {% if order_confirmed %}
+    <div class="container">
+        <h2>Order Confirmed!</h2>
+        <p>Your order has been confirmed with the following details:</p>
+        {% for order in order_confirmed.burgers %}
+            <div class="order">
+                <h3>Burger: {{ order.burger }}</h3>
+                <p>Customizations: {{ order.customizations | join(', ') }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <footer>
         <p>&copy; 2024 Burger Order App</p>
         <p>Obada & Hazem & Yaman & Mamoon & Baraa</p>
