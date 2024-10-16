@@ -78,25 +78,36 @@
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
+        <!-- Display the main heading for kitchen orders -->
         <h1>Orders in the Kitchen</h1>
     </header>
 
+    <!-- Main Container for displaying current orders in the kitchen -->
     <div class="container" id="ordersContainer">
+        <!-- Check if there are any orders to display -->
         {% if orders %}
+            <!-- Loop through each order in the orders list -->
             {% for order in orders %}
             <div class="order" id="order-{{ loop.index0 }}">
+                <!-- Display the order heading -->
                 <h3>Order:</h3>
+                <!-- Container for order details -->
                 <div class="order-details">
+                    <!-- Loop through each burger in the order and display its details -->
                     {% for burger in order.burgers %}
                     <p><strong>Burger:</strong> {{ burger.burger }}</p>
+                    <!-- Display customizations for the burger, separated by commas -->
                     <p><strong>Customizations:</strong> {{ burger.customizations | join(', ') }}</p>
                     {% endfor %}
                 </div>
+                <!-- Button to cancel the order, passing the index of the order -->
                 <button class="cancel-button" onclick="cancelOrder('{{ loop.index0 }}')">Cancel Order</button>
             </div>
             {% endfor %}
         {% else %}
+            <!-- Message displayed if there are no orders -->
             <p>No Orders yet.</p>
         {% endif %}
     </div>

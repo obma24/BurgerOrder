@@ -91,55 +91,82 @@
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
+        <!-- Display the main heading of the page -->
         <h1>Order Your Burger</h1>
     </header>
 
+    <!-- Main Container for the Burger Ordering Form -->
     <div class="container">
+        <!-- Form to allow users to order a burger, submitting via POST method -->
         <form method="POST">
+            <!-- Section for selecting a burger -->
             <h2>Select a Burger:</h2>
+            <!-- Loop through available burgers and display each as a radio button -->
             {% for burger in burgers %}
             <div>
+                <!-- Radio button to select a burger, required for submission -->
                 <input type="radio" name="burger" value="{{ burger }}" required> {{ burger }}
             </div>
             {% endfor %}
+
+            <!-- Section for selecting customizations -->
             <h2>Customizations:</h2>
+            <!-- Loop through available customizations and display each as a checkbox -->
             {% for customization in customizations %}
             <div>
+                <!-- Checkbox for each available customization option -->
                 <input type="checkbox" name="customizations" value="{{ customization }}"> {{ customization }}
             </div>
             {% endfor %}
+
+            <!-- Button to submit the selected burger and customizations to the cart -->
             <button type="submit" name="action" value="add" class="button">Add to Cart</button>
         </form>
     </div>
 
+    <!-- Container to display the current cart contents -->
     <div class="container">
+        <!-- Heading for the cart section -->
         <h2>Your Cart</h2>
+        <!-- Check if there are items in the cart -->
         {% if cart %}
+            <!-- Loop through the orders in the cart -->
             {% for order in cart %}
             <div class="order">
+                <!-- Display the selected burger and its customizations -->
                 <h3>Burger: {{ order.burger }}</h3>
                 <p>Customizations: {{ order.customizations | join(', ') }}</p>
+                <!-- Form to remove an item from the cart, using POST to submit -->
                 <form method="POST" style="display:inline;">
+                    <!-- Hidden input to pass the index of the order for removal -->
                     <input type="hidden" name="index" value="{{ loop.index0 }}">
+                    <!-- Button to remove the selected item from the cart -->
                     <button type="submit" name="action" value="remove" class="button">Remove from Cart</button>
                 </form>
             </div>
             {% endfor %}
+            <!-- Button to place the final order -->
             <form method="POST">
                 <button type="submit" name="action" value="place_order" class="button">Place Order</button>
             </form>
         {% else %}
+            <!-- Message if the cart is empty -->
             <p>Your cart is empty.</p>
         {% endif %}
     </div>
 
+    <!-- Display the confirmed order details if the session indicates an order has been placed -->
     {% if session.confirmed_order %}
     <div class="container">
+        <!-- Heading for the confirmed order section -->
         <h2>Order Confirmed!</h2>
         <p>Your order has been confirmed with the following details:</p>
+        <!-- Loop through the burgers in the confirmed order and display them -->
         {% for order in session.confirmed_order.burgers %}
             <div class="order">
+                <!-- Display the burger and its customizations from the confirmed order -->
                 <h3>Burger: {{ order.burger }}</h3>
                 <p>Customizations: {{ order.customizations | join(', ') }}</p>
             </div>
