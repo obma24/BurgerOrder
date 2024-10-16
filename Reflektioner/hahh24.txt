@@ -1,0 +1,28 @@
+Ingenjörsdagboken
+
+Week 1:Initial Setup and Learning Git
+
+During the first week, my team and I met to get familiar with configuration management using Git. We started by making sure everyone downloaded the correct application, as the teacher had emphasized the importance of using the right tools. We chose to use GitHub, a widely-used platform for version control and collaboration.
+
+To better understand how GitHub works, we watched a YouTube tutorial that explained how to create a repository and the meaning of commits. Once our repository was set up, we each practiced making a commit to a shared `main.py` file. This helped us ensure that changes were being tracked correctly.
+
+However, we encountered an issue where some commits were not successfully committed. We realised this was because two people were trying to commit changes at the same time, and the application couldn't handle the simultaneous updates. This resulted in a conflict that prevented some of the changes from being processed. After identifying the problem, we discussed it as a team and decided to take turns making commits to avoid this issue in the future. 
+
+Overall, despite the minor setback, we successfully completed the initial setup and learned how to use Git for our project.
+
+
+
+Reflection:
+
+Collaboration  
+Our first experience with Git showed the need for better communication. The issue with simultaneous commits taught us to coordinate more effectively, ensuring no one commits to the same file at the same time. Moving forward, we’ll use branches to manage individual tasks and avoid conflicts.
+
+Configuration Management:
+We realised the importance of understanding Git’s conflict resolution. While we avoided further issues by committing one at a time, adopting a structured branching strategy will improve our workflow and prevent future problems.
+
+
+
+
+
+Week 2: Planning:
+This week, my team and I met to plan how we would divide the work. We discussed each person’s strengths and previous coding experience to assign tasks accordingly. While we didn’t do any coding, this session was crucial for organising the project and ensuring that everyone understood their roles and responsibilities. The focus was on collaboration and planning for the upcoming tasks, allowing us to move forward efficiently in the weeks to come.
