@@ -1,13 +1,30 @@
+# Import necessary modules from Flask for creating the web application, 
+# rendering templates, handling requests, redirects, URLs, and session management.
 from flask import Flask, render_template, request, redirect, url_for, session
-import requests
+
+import requests # Import the 'requests' library for making HTTP requests.
+
+
+# Import MongoClient from the pymongo library to interact with MongoDB.
 from pymongo import MongoClient
 
-app = Flask(__name__)
+app = Flask(__name__) # Initialize the Flask web application.
+
+# Set the secret key for securely signing the session data. 
+# This key should be kept confidential to protect the application's sessions.
 app.secret_key = 'your_secret_key'
 
+# Create a MongoDB client connected to the 'mongo' container on port 27017.
 client = MongoClient('mongo', 27017)
-db = client.burger_orderer
+
+db = client.burger_orderer # Access the 'burger_orderer' database in MongoDB.
+
+# Access the 'burgers' collection in the 'burger_orderer' database, 
+# which stores information about the burgers available in the system.
 burgers_collection = db.burgers
+
+# Access the 'customizations' collection in the 'burger_orderer' database, 
+# which stores information about customizations available for the burgers.
 customizations_collection = db.customizations
 
 def fetch_burgers_from_db():
