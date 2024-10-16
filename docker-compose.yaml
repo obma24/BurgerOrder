@@ -1,27 +1,40 @@
 version: '3.8'  # Specifies the version of the Docker Compose file format being used.
 
 services:  # Defines the services (containers) that make up the application.
-  burgerorderer:  # Service for the Burger Orderer application.
-    build: ./Containers/BurgerOrderer  # Builds the Docker image from the specified directory.
-    ports:  # Maps the container's ports to the host.
-      - "5000:5000"  # Exposes port 5000 of the container to port 5000 on the host.
-    depends_on:  # Specifies dependencies for the service.
-      - kitchen  # Ensures the 'kitchen' service is started before this service.
-      - mongo  # Ensures the 'mongo' service is started before this service.
-
-  kitchen:  # Service for the Kitchen View application.
-    build: ./Containers/KitchenView  # Builds the Docker image from the specified directory.
-    ports:  # Maps the container's ports to the host.
-      - "5001:5001"  # Exposes port 5001 of the container to port 5001 on the host.
-
-  mongo:  # Service for the MongoDB database.
-    image: mongo  # Uses the official MongoDB image from Docker Hub.
-    container_name: mongo  # Assigns a name to the container for easier management.
-    ports:  # Maps the container's ports to the host.
-      - "27017:27017"  # Exposes port 27017 of the container to port 27017 on the host.
-    volumes:  # Defines persistent storage for the MongoDB data.
-      - mongo_data:/data/db  # Mounts the 'mongo_data' volume to the MongoDB data directory.
-
-volumes:  # Defines named volumes for data persistence.
-  mongo_data:  # Creates a named volume 'mongo_data' to persist MongoDB data.
   
+  # Service for the Burger Orderer application. 
+  # This service builds the Docker image from the specified directory, 
+  # maps port 5000 of the container to port 5000 on the host, 
+  # and depends on the 'kitchen' and 'mongo' services to be running.
+  burgerorderer:
+    build: ./Containers/BurgerOrderer
+    ports:
+      - "5000:5000"
+    depends_on:
+      - kitchen
+      - mongo
+
+  # Service for the Kitchen View application.
+  # This service builds the Docker image from the specified directory 
+  # and maps port 5001 of the container to port 5001 on the host.
+  kitchen:
+    build: ./Containers/KitchenView
+    ports:
+      - "5001:5001"
+
+  # Service for the MongoDB database.
+  # This service uses the official MongoDB image, assigns a name to the 
+  # container for easier management, maps port 27017 of the container to 
+  # port 27017 on the host, and defines persistent storage for MongoDB data.
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+# Defines named volumes for data persistence.
+# This volume is used to persist MongoDB data.
+volumes:
+  mongo_data:
