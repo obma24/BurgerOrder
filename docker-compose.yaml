@@ -1,4 +1,8 @@
-version: '3.8'  # Specifies the version of the Docker Compose file format being used.
+# This docker-compose.yaml file orchestrates multiple containers:
+#  - Defines services for the BurgerOrderer, KitchenView, and MongoDB.
+#  - Configures network ports, dependencies, and data volumes.
+
+version: '3.8'
 
 services:  # Defines the services (containers) that make up the application.
   

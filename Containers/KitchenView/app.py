@@ -1,3 +1,9 @@
+"""
+app.py: Application for the Kitchen for managing incoming orders in the KitchenView system.
+This Flask application is designed for kitchen staff to manage orders. 
+It displays current orders, allows new orders to be added, 
+and enables the cancellation of existing orders.
+"""
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)

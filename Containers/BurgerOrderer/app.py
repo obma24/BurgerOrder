@@ -1,7 +1,9 @@
-# Import necessary modules from Flask for creating the web application, 
-# rendering templates, handling requests, redirects, URLs, and session management.
-from flask import Flask, render_template, request, redirect, url_for, session
-
+"""
+app.py: Main web application for the Burger Ordering System.
+This Flask application allows customers to choose burgers, customize their orders, manage their shopping cart, 
+and place orders which are then sent to the kitchen service.
+"""
+from flask import Flask, render_template, request, redirect, url_for, session # Import necessary modules from Flask
 import requests # Import the 'requests' library for making HTTP requests.
 
 

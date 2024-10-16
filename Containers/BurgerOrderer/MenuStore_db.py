@@ -1,3 +1,10 @@
+"""
+In this file, `MenuStore_db.py`, the script is responsible for populating the MongoDB database
+for burger options and customizations for the BurgerOrderer application.
+It connects to a MongoDB, clears existing data from the 'burgers' and 'customizations' collections,
+and then inserts new data. This ensures that every time the application is started,
+the database is refreshed with up-to-date burger and customization options.
+"""
 from pymongo import MongoClient
 
 # Create a MongoClient to connect to the MongoDB instance
