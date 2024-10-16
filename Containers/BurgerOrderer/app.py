@@ -102,13 +102,32 @@ def order():
             return redirect(url_for('order'))  # Redirect to the same page to show the order confirmation
 
 
+    # Fetch all burgers from the database using the fetch_burgers_from_db function.
     burgers_from_db = fetch_burgers_from_db()
+
+    # Fetch all available customizations from the database using the fetch_customizations_from_db function.
     customizations_from_db = fetch_customizations_from_db()
 
+    # Extract the 'name' field from each burger document retrieved from the database 
+    # and store them in the BURGERS list for display purposes.
     BURGERS = [burger['name'] for burger in burgers_from_db]
+
+    # Extract the 'name' field from each customization document retrieved from the database 
+    # and store them in the CUSTOMIZATIONS list for display purposes.
     CUSTOMIZATIONS = [customization['name'] for customization in customizations_from_db]
 
-    return render_template('index.html', burgers=BURGERS, customizations=CUSTOMIZATIONS, cart=session['cart'], order_confirmed=session.get('confirmed_order', None))
+    # Render the 'index.html' template, passing the burgers, customizations, the shopping cart stored in the session,
+    # and a flag to indicate whether the order has been confirmed (from the session, if available).
+    return render_template(
+        'index.html', 
+        burgers=BURGERS, 
+        customizations=CUSTOMIZATIONS, 
+        cart=session['cart'], 
+        order_confirmed=session.get('confirmed_order', None)
+    )
 
+# Start the Flask application when this script is executed, making it accessible 
+# from any network interface on port 5000.
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
