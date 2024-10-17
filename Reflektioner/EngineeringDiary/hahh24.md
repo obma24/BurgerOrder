@@ -47,11 +47,12 @@ Researching database integration was challenging, but it taught me the importanc
 
 Week 4&5:
 
-Over the past weeks, I focused on learning how to connect the main application with the HTML file. This task proved to be more difficult than I anticipated. After struggling with it, my colleague and I agreed that he would handle implementing the HTML with the main application, while I shifted my focus toward learning more about databases and containers. I hoped this knowledge would help me better understand virtual machines and contribute more effectively to the project.
+Over the past weeks, I focused on learning how to connect the main application with the HTML file. This task proved to be more difficult than I anticipated. After struggling with it, my colleague and I agreed that he would handle integrating the HTML with the main application, while I shifted my focus toward learning more about databases and containers. I hoped this knowledge would help me better understand virtual machines and contribute more effectively to the project.
 
-Meanwhile, I continued working on the front-end design, writing the full HTML and CSS code to ensure the interface was user-friendly. I adjusted colours, added buttons for customising burger orders, and committed the changes to GitHub.
+Meanwhile, I continued working on the front-end design. My colleague sent me a wireframe for how the website should look, which provided a clear structure and helped guide the layout of my HTML and CSS code. The wireframe simplified decisions like where to place buttons, ensuring the interface would be user-friendly. This saved me a lot of time, as I didn't have to start from scratch. The framework wasn’t too complex, which worked well because our teacher emphasized functionality over design.
 
-One problem I faced was connecting the HTML file with the external CSS file. Based on what I had learned before, I knew it was best practice to separate HTML and CSS. However, I had a hard time making them work together. After researching online, I found a solution that suggested embedding the CSS directly within the HTML file, using the <style> tag. While this wasn’t the ideal solution, it allowed me to move forward and ensure the design looked as intended. The code I implemented looked something like this:
+As I implemented the front-end, I wrote the full HTML and CSS code, adjusting colors and adding buttons for customizing burger orders. I then committed the changes to GitHub. One challenge I faced was connecting the HTML file with the external CSS file. I knew it was best practice to keep them separate, but I struggled to make it work. After researching online, I found a solution that suggested embedding the CSS directly within the HTML file using the `<style>` tag. While this wasn’t ideal, it allowed me to proceed and ensure the design worked as intended. While this wasn’t the ideal solution, it allowed me to move forward and ensure the design looked as intended. The code I implemented looked something like this:
+
 
 
 
