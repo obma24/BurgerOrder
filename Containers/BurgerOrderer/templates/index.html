@@ -171,8 +171,12 @@
                 <p>Customizations: {{ order.customizations | join(', ') }}</p>
             </div>
         {% endfor %}
+
+        <!-- New button that links to the kitchen view -->
+        <a href="http://localhost:5001/" class="button">Go to Kitchen View</a>
     </div>
     {% endif %}
+
 
     <footer>
         <p>&copy; 2024 Burger Order App</p>

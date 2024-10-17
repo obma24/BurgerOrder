@@ -8,7 +8,9 @@ Step 1: Start the Docker Desktop application. Make sure Docker Desktop is instal
 Step 2: Open the terminal in Visual Studio Code (VSCode). By going to the "Terminal" menu and selecting "New Terminal".
 
 Step 3: Enter the following command in the terminal to build and run the application:
-## docker-compose up --build
+```
+docker-compose up --build
+```
 
 Step 4: Open the browser and navigate to the following links to access the application:
  - To start ordering burgers, open [BurgerOrderer](http://localhost:5000). This gives you access to the application where you can view and customize burgers.
