@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 Engineering Diary (Individual Assignment):
 Name: Hazem Haj Ali 
 (hahh24)
 
-=======
 Ingenjörsdagboken
 
 Week 1:Initial Setup and Learning Git
@@ -16,8 +14,6 @@ However, we encountered an issue where some commits were not successfully commit
 
 Overall, despite the minor setback, we successfully completed the initial setup and learned how to use Git for our project.
 
-
-
 Reflection:
 
 Collaboration  
@@ -27,13 +23,8 @@ Configuration Management:
 We realised the importance of understanding Git’s conflict resolution. While we avoided further issues by committing one at a time, adopting a structured branching strategy will improve our workflow and prevent future problems.
 
 
-
-
-
 Week 2: Planning:
 This week, my team and I met to plan how we would divide the work. We discussed each person’s strengths and previous coding experience to assign tasks accordingly. While we didn’t do any coding, this session was crucial for organising the project and ensuring that everyone understood their roles and responsibilities. The focus was on collaboration and planning for the upcoming tasks, allowing us to move forward efficiently in the weeks to come.
->>>>>>> e38407fb7f1c815843aba69f4d7338b6b44ce7a7
-
 
 Week 3 : Implementing HTML and CSS
 
@@ -44,10 +35,6 @@ However, I quickly encountered a challenge: I had no prior experience connecting
 Some of the solutions I found required learning new programming languages or frameworks, which was initially overwhelming. After exploring several options, I realized that I needed to discuss the situation with my team. We held a meeting to talk about the different methods I had found and evaluated which one would be the most feasible for our project. Given the complexity, we decided that the best approach was to take it one step at a time. Our plan is to first establish a basic connection between the front-end and main application, then gradually add more functionality as we go along.
 
 This experience has taught me the importance of collaboration and seeking advice when facing challenges beyond my expertise. The step-by-step approach we agreed on has helped break down the problem, making it feel more manageable and allowing us to move forward with confidence.
-
-
-
-
 
 Reflection
 
