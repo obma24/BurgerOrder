@@ -1,4 +1,11 @@
+Engineering Diary (Individual Assignment):
+
+Name: M Mamoon Almorad
+
+(mamoonalmorad0)
+
 Week 1: Setting Up Configuration Management with GitHub
+
 During the first week, my group and I worked on installing a configuration management tool, specifically GitHub. We started by downloading the latest version of GitHub Desktop from the official GitHub website and installed it on our machines. After installation, we logged in using our GitHub accounts, which enabled us to access our repositories.
 
 Once everything was set up, we watched a tutorial on creating a repository. We learned how to initialize a new repository by clicking on "New Repository" in the GitHub interface, naming it appropriately, and choosing to initialize it with a README file to provide context about the project. After successfully creating the repository, we began testing commits by making changes to the README file. We used the command git add README.md to stage our changes, followed by git commit -m 'Initial commit with project description' to commit our updates. Finally, we pushed the changes using git push origin main to upload them to the remote repository.
@@ -11,6 +18,7 @@ Moving forward, we will adopt better practices, such as pulling the latest chang
 Overall, this experience served as a critical learning moment that not only deepened my understanding of GitHub but also reinforced the importance of collaboration in software development. I feel better equipped to manage version control in future projects, understanding that a well-coordinated team can significantly improve efficiency and reduce errors.
 
 Week 2: Planning and Understanding Team Roles
+
 This week, after our group discussions on defining individual roles, I focused on creating a structured plan for myself. I realized that having a clear approach would be critical to ensuring that my work contributed effectively to the project. The first step in my plan was to deepen my understanding of my assigned part of the project. By learning more about my responsibilities, I could better align my tasks with the overall project requirements and ensure I was on the right track.
 
 The second step involved expanding my knowledge beyond just my tasks and learning about the roles of my teammates, particularly the parts that were directly related to mine. This gave me a better understanding of how my work would interact with theirs. By familiarizing myself with their responsibilities, I was able to write code that was not only correct for my part but also easy for my teammates to integrate with their work. This approach led me to think critically about the dependencies between our roles and helped me anticipate potential challenges in the collaboration process.
@@ -55,6 +63,7 @@ Next Steps
 Looking ahead, I plan to continue applying the knowledge gained this week to refine the user interface, ensuring that it is both functional and visually appealing. I will also maintain my support for the team, particularly in areas related to HTML and CSS, to ensure that we stay aligned as we move forward. In addition, I will keep expanding my knowledge of Docker and other relevant technologies to ensure I can contribute effectively to all aspects of the project.
 
 Week 4: Designing the User Interface and Kickstarting Development
+
 Purpose & Objectives:
 This week’s goal was to establish a clear, functional design for the application's user interface (UI) that serves both the customers (Burger Orderer) and kitchen staff (Kitchen View). The design would act as the blueprint for development, ensuring alignment between team members and guiding the technical implementation. A critical objective was to provide a user-friendly interface that intuitively supports order customization and processing.
 
