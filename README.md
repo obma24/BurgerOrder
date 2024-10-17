@@ -13,6 +13,6 @@ docker-compose up --build
 ```
 
 Step 4: Open the browser and navigate to the following links to access the application:
- - To start ordering burgers, open [BurgerOrderer](http://localhost:5000). This gives you access to the application where you can view and customize burgers.
+ - To start ordering burgers, open [BurgerOrderer](http://localhost:5000), or just search manually (http://localhost:5000/). This gives you access to the application where you can view and customize burgers.
 
- - For the kitchen staff to view incoming orders, open [KitchenView](http://localhost:5001). Here, the kitchen staff can see all orders in real time.
+ - For the kitchen staff to view incoming orders, open [KitchenView](http://localhost:5001), or just search manually (http://localhost:5001/). Here, the kitchen staff can see all orders in real time.
