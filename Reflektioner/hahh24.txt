@@ -56,3 +56,36 @@ This week underscored the value of teamwork. Discussing the database integration
 
 Learning:
 Researching database integration was challenging, but it taught me the importance of a step-by-step approach. By focusing on one part at a time, I was able to make progress without feeling overwhelmed.
+
+
+Week 4&5:
+
+Over the past weeks, I focused on learning how to connect the main application with the HTML file. This task proved to be more difficult than I anticipated. After struggling with it, my colleague and I agreed that he would handle implementing the HTML with the main application, while I shifted my focus toward learning more about databases and containers. I hoped this knowledge would help me better understand virtual machines and contribute more effectively to the project.
+
+Meanwhile, I continued working on the front-end design, writing the full HTML and CSS code to ensure the interface was user-friendly. I adjusted colours, added buttons for customising burger orders, and committed the changes to GitHub.
+
+One problem I faced was connecting the HTML file with the external CSS file. Based on what I had learned before, I knew it was best practice to separate HTML and CSS. However, I had a hard time making them work together. After researching online, I found a solution that suggested embedding the CSS directly within the HTML file, using the <style> tag. While this wasn’t the ideal solution, it allowed me to move forward and ensure the design looked as intended. The code I implemented looked something like this:
+
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 50px;
+            margin: 0;
+            color: #333;
+        }...
+	</style>
+
+    
+Reflection:
+
+Problem-Solving  
+This week was challenging as I struggled with connecting the HTML and CSS files. Even though best practice suggests keeping them separate, I had to adapt by embedding the CSS directly into the HTML file to keep moving forward. This taught me that sometimes a temporary workaround is necessary to make progress, even if it’s not the ideal solution.
+
+Learning and Adaptation: 
+Although I couldn’t complete the integration of the HTML with the main application, I gained valuable insight into database structures and containers, which will be useful for future tasks. I also realised that I need to improve my understanding of how different parts of an application connect.
+
+Collaboration: 
+Discussing the integration issue with my colleague helped us divide the work based on our strengths. Handing over the task of connecting the files to him allowed me to focus on other areas like design and learning about virtual machines. This collaboration helped us maintain progress without getting stuck on one task.
