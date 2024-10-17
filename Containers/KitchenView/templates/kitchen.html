@@ -118,53 +118,71 @@
     </footer>
 
     <script>
+        /**
+         * Fetch orders from the server and display them on the page.
+         * This function sends a GET request to '/get_orders' to retrieve the current orders
+         * and updates the 'ordersContainer' with the list of orders or a message if no orders exist.
+         */
         function fetchOrders() {
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/get_orders', true);
+            xhr.open('GET', '/get_orders', true);  // Send a GET request to retrieve the orders
             xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var orders = JSON.parse(xhr.responseText);
+                if (xhr.readyState == 4 && xhr.status == 200) {  // Check if the request is complete and successful
+                    var orders = JSON.parse(xhr.responseText);  // Parse the response as JSON
                     var ordersContainer = document.getElementById('ordersContainer');
-                    ordersContainer.innerHTML = '';
-
+                    ordersContainer.innerHTML = '';  // Clear the container for the new data
+    
+                    // If there are orders, display them; otherwise, show a message
                     if (orders.length > 0) {
                         orders.forEach(function(order, index) {
+                            // Create HTML for each order and its burgers
                             var orderHTML = '<div class="order" id="order-' + index + '"><h3>Order:</h3>';
                             order.burgers.forEach(function(burger) {
                                 orderHTML += '<p><strong>Burger:</strong> ' + burger.burger + '</p>' +
                                             '<p><strong>Customizations:</strong> ' + burger.customizations.join(', ') + '</p>';
                             });
                             orderHTML += '<button class="cancel-button" onclick="cancelOrder(\'' + index + '\')">Cancel Order</button></div>';
-                            ordersContainer.innerHTML += orderHTML;
+                            ordersContainer.innerHTML += orderHTML;  // Append the order to the container
                         });
                     } else {
+                        // If no orders are present, display a default message
                         ordersContainer.innerHTML = '<p>No Orders yet.</p>';
                     }
                 }
             };
-            xhr.send();
+            xhr.send();  // Send the request
         }
-
-        setInterval(fetchOrders, 5000);
-
+    
+        /**
+         * Continuously fetch orders every 5 seconds to keep the list updated.
+         */
+        setInterval(fetchOrders, 5000);  // Call fetchOrders every 5000 ms (5 seconds)
+    
+        /**
+         * Cancel an order by its index.
+         * This function sends a DELETE request to '/cancel_order' with the order index to remove the order.
+         * If the cancellation is successful, the order is removed from the page.
+         *
+         * @param {number} orderIndex - The index of the order to be canceled.
+         */
         function cancelOrder(orderIndex) {
             var xhr = new XMLHttpRequest();
-            xhr.open('DELETE', '/cancel_order/' + orderIndex, true);
+            xhr.open('DELETE', '/cancel_order/' + orderIndex, true);  // Send a DELETE request to cancel the order
             xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
+                if (xhr.readyState == 4) {  // Check if the request is complete
+                    if (xhr.status == 200) {  // If successful, remove the order from the page
                         var orderElement = document.getElementById('order-' + orderIndex);
                         if (orderElement) {
-                            orderElement.remove();
+                            orderElement.remove();  // Remove the order from the DOM
                         }
-                        alert('Beställningen har avbrutits.');
+                        alert('Beställningen har avbrutits.');  // Show a success message
                     } else {
-                        alert('Fel: Beställningen kunde inte avbrytas.');
+                        alert('Fel: Beställningen kunde inte avbrytas.');  // Show an error message if the cancellation fails
                     }
                 }
             };
-            xhr.send();
+            xhr.send();  // Send the request
         }
-    </script>
+    </script>    
 </body>
 </html>
