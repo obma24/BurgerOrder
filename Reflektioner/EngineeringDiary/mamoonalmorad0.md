@@ -121,3 +121,30 @@ Reflecting on my development process, I realized that my decision to work locall
 
 Summary
 In summary, during Week 5, I successfully resolved key issues such as dynamically generating order content, handling empty order lists, and implementing asynchronous data fetching. I also made significant progress in confirming order details and ensuring they are displayed properly. However, I deferred the implementation of real-time updates, clearing old orders, and effectively handling JSON data parsing to the following week. This approach allowed me to prioritize stability and ensure the application’s functionality was correct before integrating it with the shared codebase.
+
+Week 6: Implementing Real-Time Updates and Finalizing Development
+
+Summary of Work
+In Week 6, I dedicated my efforts to resolving the remaining issues in my application and making necessary adjustments to the code. After addressing all outstanding problems, I successfully uploaded the complete code to GitHub, marking a significant milestone in the development process. This step not only allowed my teammates to access my work but also facilitated future collaboration as we moved toward completing the project.
+
+Key Improvements
+One of the most critical challenges I tackled was implementing real-time automatic updates for the order status. Previously, users needed to manually refresh the page to see the latest orders, which detracted from the overall user experience. To enhance this functionality, I utilized the setInterval(fetchOrders, 5000) method, which allowed the fetchOrders() function to be called automatically every five seconds. As a result, the application now consistently displays the most recent orders without requiring any action from the user. This improvement significantly enhanced the interactivity and responsiveness of the application, making it more user-friendly.
+
+Another important issue I resolved was ensuring that the display of orders remained clean by avoiding duplication. With the implementation of automatic updates, it was essential to clear the order container before appending new orders. By adding the line ordersContainer.innerHTML = ''; prior to rendering new orders, I ensured that only the latest orders would be visible each time the function executed. This adjustment improved the clarity of the order display and eliminated potential confusion for users.
+
+Additionally, I focused on effectively handling the JSON data sent from the server. Initially, I encountered challenges with parsing the JSON format, which is not directly usable in JavaScript. To address this, I implemented JSON.parse(xhr.responseText), converting the JSON string into a JavaScript object. This conversion allowed me to loop through the orders and display their contents accurately on the page. Proper handling of JSON data was vital for the application to function correctly and for the user interface to present data reliably.
+
+Testing and Debugging
+Throughout this week, I prioritized continuous testing and debugging. Utilizing tools such as console logging and breakpoints in the browser’s developer tools, I was able to isolate and address any issues promptly. This proactive approach to debugging ensured that the application remained stable as I made changes.
+
+Reflections on Development Process
+Reflecting on my development process, I recognize the importance of thorough testing and clear communication within the team. Uploading my code to GitHub was a significant step that not only showcased my completed work but also facilitated discussions about future improvements and collaborative efforts. I ensured that I provided detailed commit messages that outlined the changes made, which will help my teammates understand the evolution of the codebase.
+
+Insights on Learning and Growth
+Looking back on this project, I have gained valuable insights into both the technical and collaborative aspects of software development. I enhanced my programming skills, particularly in handling asynchronous operations and parsing JSON data. I also improved my understanding of user experience design by implementing real-time updates, which taught me the importance of responsiveness in applications. Furthermore, I learned how to communicate effectively with my team, ensuring that we remained aligned in our objectives, even when working independently.
+
+Future Plans
+As this was the final week of the project, I am excited about the potential for future enhancements to the application. Although my focus was on resolving existing issues, I envision features such as user account management and a more sophisticated order history system that could further enhance the user experience. Additionally, I plan to explore more advanced data visualization techniques to present order statistics, which could provide valuable insights for users. I believe these improvements will not only elevate the functionality of the application but also strengthen the collaborative efforts within the team as we continue to develop the project.
+
+Conclusion
+In summary, Week 6 was a productive culmination of my efforts, as I successfully implemented crucial features and uploaded the complete code to GitHub. The changes I made not only enhance the application’s functionality but also contribute to a more seamless collaborative environment moving forward. Additionally, based on a tip from the lab teacher, I added buttons between the BurgerOrderer and KitchenView to improve navigation. I designed these buttons to be visually appealing and easy to see, which further enhances the user experience by making it simpler to navigate between these components.
