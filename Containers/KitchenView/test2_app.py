@@ -1,12 +1,12 @@
 import pytest
-from app import app  # Adjust the import based on your project structure
+from app import app 
 
 @pytest.fixture
 def client():
     """Create a test client for the Flask application."""
-    app.config['TESTING'] = True  # Enable testing mode
+    app.config['TESTING'] = True  # Enabling testing mode
     with app.test_client() as client:
-        yield client  # Provide the test client to the tests
+        yield client  # Provided the test client to the tests
 
 @pytest.fixture(autouse=True)
 def reset_orders():
@@ -17,7 +17,7 @@ def test_kitchen_page(client):
     """Test that the kitchen page renders correctly."""
     response = client.get('/')
     assert response.status_code == 200
-    assert b'Kitchen' in response.data  # Adjust according to your kitchen.html content
+    assert b'Kitchen' in response.data
 
 def test_new_order(client):
     """Test adding a new order."""
@@ -32,7 +32,7 @@ def test_get_orders(client):
     """Test retrieving current orders."""
     response = client.get('/get_orders')
     assert response.status_code == 200
-    assert isinstance(response.json, list)  # Ensure it's a list
+    assert isinstance(response.json, list)  # test that it ensures it's a list
 
 def test_cancel_order(client):
     """Test canceling an order."""
