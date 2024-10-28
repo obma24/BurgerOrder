@@ -75,4 +75,14 @@ Having five members in the group certainly made things easier, as we could divid
 One of the key lessons I learned from working on BurgerOrder was the importance of stepping back and reflecting on the code. Taking the time to think about what we were doing and planning the next steps carefully helped us avoid possible mistakes and move forward more efficiently.
 
 
+Correcting mistakes:
+Upon reviewing the assignment, the teacher pointed out that pytest scripts were missing. In response, we arranged a meeting to add the necessary tests to the "app.py" file for the KitchenView app. I did therefore the following commit:
+
+In the "app.py" file for the KitchenView app, I ran some tests to see if I could cancel orders correctly. The first test checked if I could cancel an order and if the order list would update after that. At first, this test failed because the order I thought I canceled was still in the list, which caused an error.
+
+The second test was supposed to check what happens when I try to cancel an order that doesn’t exist. Instead of getting a 404 error, it returned a 200 status, meaning the app wasn’t handling that situation properly.
+
+To fix the problems, I changed how the orders are stored. Instead of using a simple list (orders = []), I made it part of the Flask app itself (app.orders = []). This way, the same order list is used throughout the app, and it’s easier to reset for testing. I also updated the code to use app.orders everywhere instead of the standalone list.
+
+After making these changes, I ran the tests again. The first test passed, confirming that I could cancel an order and the order list was empty afterward. The second test also passed, returning the expected 404 status when trying to cancel an order that didn’t exist. Overall, these fixes made the app better at handling order.
 
