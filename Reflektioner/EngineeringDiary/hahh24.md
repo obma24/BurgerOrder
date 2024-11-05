@@ -1,9 +1,3 @@
-link to my diary in GitHub:
-https://github.com/obma24/BurgerOrder-Grupp-11-/blob/main/Reflektioner/EngineeringDiary/hahh24.md
-Engineering Diary (individual Assignment)
-Name: Hazem Haj Ali
-(hahh24)
-
 Ingenjörsdagboken
 
 
@@ -198,21 +192,17 @@ Week 6 - Final Debugging
 
 
 
-During the final week of our project, much of my time was dedicated to debugging and fine-tuning the kitchen view to ensure it displayed new orders in real-time. We noticed that the kitchen view wasn’t automatically updating after each new order; instead, we had to refresh the page manually to see the latest information. My colleague and I decided to investigate the cause, and we modified specific JavaScript variables to implement automatic updates.
+In the final week of the project, I conducted an in-depth debug session to ensure the kitchen view would update automatically whenever a new order was placed. Initially, we noticed that new orders weren’t displaying without manually refreshing the page. To solve this, I used the debugger in my development environment to identify and resolve the issue.
 
-The fetchOrders() function was central to the solution, as it periodically requests updated order data from the server. This function uses two key variables: orders and ordersContainer. These variables required close monitoring to ensure they received and displayed the new data correctly.
+I began by setting breakpoints in the kitchen.js file, where the fetchOrders() function is located. The first breakpoint was placed at the start of fetchOrders() to verify that it was being called correctly and successfully retrieving data from the server. Another key breakpoint was set where ordersContainer (the HTML element displaying current orders) was updated, so I could ensure that new order data was added without duplicating previous entries.
 
-The orders variable holds the list of current orders. Inside fetchOrders(), orders is assigned the server response via xhr.responseText, which is parsed into a JavaScript array. While observing orders, we noticed it sometimes returned as an empty array [], especially when no orders were available. This discrepancy suggested that the XMLHttpRequest wasn’t always returning data as expected. To address this, we added a conditional check to handle cases when orders is empty, displaying a “No orders yet” message in ordersContainer if no data is returned.
+With the breakpoints in place, I launched the debugger and stepped through the code to carefully track how it executed. I used “Step Into” to enter the fetchOrders() function and follow it line by line, verifying that the XMLHttpRequest was processed correctly. Then, I used “Step Over” to skip simpler lines that declared variables without significant logic, allowing me to focus on the data handling portions of the code. After checking each line’s output, I used “Continue” to jump quickly to the next breakpoint, which sped up the process of identifying issues.
 
-The ordersContainer variable, accessed using document.getElementById('ordersContainer'), represents the HTML element where orders are displayed. Initially, we observed that ordersContainer.innerHTML wasn’t updating dynamically, leading to a static view of the orders. To fix this, we cleared ordersContainer.innerHTML at the beginning of each fetchOrders() call to ensure that old data was removed before appending new entries. Observing this variable in the console confirmed that each time fetchOrders() ran, ordersContainer.innerHTML was reset, preventing duplicate entries.
+To understand how data was handled and displayed, I monitored two primary variables. The first was orders, which stores the server response parsed as JSON. Initially, orders showed up as an empty array ([]) when there were no orders. Monitoring orders allowed me to see it populate with new order data, confirming that data was being received and updated as expected. This tracking helped verify that each time fetchOrders() was called, orders were properly updated. The second variable, ordersContainer, represents the HTML container where orders are displayed. I observed its innerHTML value to ensure old data was cleared before new data was added, preventing duplicates. Monitoring ordersContainer confirmed that each time fetchOrders() ran, ordersContainer.innerHTML reset before appending new order details, showing this part of the function was working as intended.
 
-Within the fetchOrders() function, we used forEach() loops to display each order’s details. The orderHTML variable within these loops builds the HTML structure, showing each burger’s name and its customizations. Initially, we noticed some data alignment issues, where customizations didn’t display correctly alongside their respective burgers. After monitoring orderHTML, we made adjustments to ensure each burger’s customizations appeared consistently, verifying that the details were formatted correctly.
+To thoroughly test fetchOrders(), I explored different scenarios. When a new order was added, I confirmed that fetchOrders() ran as expected, updating ordersContainer without duplicating previous orders. When there were no new orders, ordersContainer.innerHTML correctly remained empty, displaying a “No orders yet” message. Additionally, by cancelling and restarting an order, I confirmed that fetchOrders() didn’t attempt to update ordersContainer without valid data.
 
-Finally, we set the fetchOrders() function to run every five seconds using setInterval (fetchOrders, 5000);, ensuring the kitchen view updates in real-time. This adjustment confirmed that the ordersContainer now refreshes automatically, showing the latest order information without manual intervention. The debugging process allowed us to achieve a functional, real-time order display, improving the overall user experience.
-
-
-
-
+Using the debugger in my development environment provided valuable insights into how each part of the function executed and how variables changed in real-time. I identified specific points where data wasn’t updating correctly and made the necessary adjustments. Setting breakpoints at key points was essential, as it allowed me to track each variable’s status and verify data flow precisely. Tracking asynchronous functions like XMLHttpRequest turned out to be more complex than expected, requiring multiple attempts to ensure consistent data updates. Overall, debugging has proven to be an invaluable tool for understanding the flow of code and tracking variable changes in real-time, giving me a much deeper understanding of function execution and making it easier to resolve issues quickly.
 
 
 
