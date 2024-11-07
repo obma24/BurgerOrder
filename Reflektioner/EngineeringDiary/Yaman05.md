@@ -30,6 +30,31 @@ One major issue I encountered was how the system handled multiple items in the c
 
 Additionally, I noticed there was no functionality for viewing the cart’s contents. I created a `/view_cart` endpoint to allow users to see the items in their cart, and I also added a POST endpoint for removing items from the cart via `/remove_from_cart`. These updates gave users more control over their orders, allowing them to manage their cart dynamically.
 
+During week four, I also focused on using the debugger in VS Code to better understand and improve the code for several key functions, including the ordering and payment processes. The following steps document the debugging session I conducted:
+Selecting Functionality: I chose to focus on the function for ordering a “Dripping With Lard Heartstopper” meal, as it is a core part of the app and involves multiple stages that could benefit from debugging.
+
+Setting Breakpoints: I placed breakpoints at strategic points in the code:
+At the start of the place_order function in app.py, where the order details are initially processed.
+Inside the process_payment function, where the payment is handled.
+On the final line of the add_to_cart function to ensure the item is correctly added to the cart.
+To locate the file and functions where I needed to set these breakpoints, I reviewed the project structure in VS Code, specifically examining the app.py file, where the ordering logic is implemented.
+
+Proceeding with Debugging and Using Debugger Tools:
+I started the debugging session and used the "Continue" button to let the code run until it reached the next breakpoint.
+When I reached the process_payment function, I used "Step Into" to follow each line inside the function and examine its flow.
+To skip unnecessary details in functions I had already analyzed, I used "Step Over" to continue without stepping into every line.
+I also used "Step Out" to exit functions where I had gathered enough information to move on.
+Monitoring Variables:
+I monitored the order_total variable to ensure it was calculated correctly.
+In the debugger, I added order_total as a "watched variable." Initially, its value was 0, but it increased as items were added to the cart.
+To detect changes in order_total, I used the “break on change” feature within watched variables, which paused the code each time the variable was modified. This allowed me to observe how the value of order_total changed step-by-step as items were added.
+Exploring Different Paths:
+I tested different paths through the ordering process, including placing various orders, canceling halfway through, and modifying the order in the cart.
+Each path affected which parts of the code executed. For instance, canceling an order mid-way triggered error handling logic I had not originally considered.
+These variations also impacted the watched variables, as values like order_total and order_items fluctuated based on the actions taken.
+I repeated each step several times to ensure I understood how the debugger and its features worked. This process was invaluable for identifying and fixing issues I would have missed otherwise.
+
+
 Week 5: Further Development and Optimizations
 
 With most foundational issues resolved, we spent week five focusing on improving the user experience and streamlining the project’s functionality. The goal was to ensure that all the features we had implemented worked smoothly together.
@@ -76,3 +101,13 @@ One of the key lessons I learned from working on BurgerOrder was the importance 
 
 
 
+	Correcting mistakes:
+Upon reviewing the assignment, the teacher pointed out that pytest tests were missing. In response, we arranged a meeting to add the necessary tests to the "app.py" file for the KitchenView app. I did therefore the following commit:
+
+In the "app.py" file for the KitchenView app, I ran some tests to see if I could cancel orders correctly. The first test checked if I could cancel an order and if the order list would update after that. At first, this test failed because the order I thought I canceled was still in the list, which caused an error.
+
+The second test was supposed to check what happens when I try to cancel an order that doesn’t exist. Instead of getting a 404 error, it returned a 200 status, meaning the app wasn’t handling that situation properly.
+
+To fix the problems, I changed how the orders are stored. Instead of using a simple list (orders = []), I made it part of the Flask app itself (app.orders = []). This way, the same order list is used throughout the app, and it’s easier to reset for testing. I also updated the code to use app.orders everywhere instead of the standalone list.
+
+After making these changes, I ran the tests again. The first test passed, confirming that I could cancel an order and the order list was empty afterward. The second test also passed, returning the expected 404 status when trying to cancel an order that didn’t exist. Overall, these fixes made the app better at handling order.
