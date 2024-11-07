@@ -1,3 +1,6 @@
+https://github.com/obma24/BurgerOrder-Grupp-11-/blob/main/Reflektioner/EngineeringDiary/mamoonalmorad0.md 
+
+
 Engineering Diary (Individual Assignment):
 
 Name: M Mamoon Almorad
@@ -15,7 +18,12 @@ However, we encountered a significant issue when two group members attempted to 
 Reflection: This week was pivotal for establishing our group’s approach to configuration management throughout the project. Through our experiences with GitHub, I gained insight into the necessity of clear communication and coordination. For instance, one member suggested we use a group chat to inform each other when committing changes, which will help prevent future conflicts. This taught us that proper coordination is essential to maintain system status visibility, aligning with user experience principles.
 
 Moving forward, we will adopt better practices, such as pulling the latest changes from the repository before making any new commits and communicating clearly about who is committing at what time. Additionally, this experience emphasized the value of branching in GitHub, which would allow us to work on separate features without interfering with each other's code. We plan to explore this feature more extensively to streamline our workflow and minimize disruptions.
+
 Overall, this experience served as a critical learning moment that not only deepened my understanding of GitHub but also reinforced the importance of collaboration in software development. I feel better equipped to manage version control in future projects, understanding that a well-coordinated team can significantly improve efficiency and reduce errors.
+
+
+
+
 
 Week 2: Planning and Understanding Team Roles
 
@@ -29,8 +37,10 @@ Reflections: This week’s planning process was highly beneficial, as it allowed
 
 I’ve learned that collaboration in software development is not just about doing your part but also ensuring that the way you do your work complements the efforts of others. This deeper understanding of the team’s tasks has given me the tools to write code that not only fulfills my own responsibilities but also anticipates the needs of my teammates, resulting in a more seamless integration of our work.
 
-Week 3: Deepening Understanding and Supporting the Team
 
+
+
+Week 3: Deepening Understanding and Supporting the Team
 Summary of Work
 This week, I focused on deepening my understanding of both my tasks and those of my teammates, which allowed me to anticipate potential challenges and collaborate more effectively within the team. As the next stage of development required significant work on the user interface, I prepared by reviewing key concepts in HTML and CSS to ensure I could contribute effectively to the design and front-end development.
 
@@ -57,45 +67,53 @@ Additionally, I gained a deeper understanding of how important it is to approach
 
 Insights on Learning and Growth
 Through this week’s work, I realized the importance of building a comprehensive understanding of both my own tasks and my teammates' roles. By doing so, I was able to anticipate challenges, collaborate more effectively, and contribute to the overall success of the project. My focus on Docker and front-end development deepened my technical skills, while my hands-on work with HTML and CSS allowed me to apply those skills directly to the project.
+
 Additionally, my experience this week highlighted the importance of early-stage planning and preparation. By reviewing key concepts in advance, I was better equipped to support the team and ensure that we laid a solid foundation for the interface design. This will help prevent potential issues later in the project and make future iterations smoother and more efficient.
 
 Next Steps
 Looking ahead, I plan to continue applying the knowledge gained this week to refine the user interface, ensuring that it is both functional and visually appealing. I will also maintain my support for the team, particularly in areas related to HTML and CSS, to ensure that we stay aligned as we move forward. In addition, I will keep expanding my knowledge of Docker and other relevant technologies to ensure I can contribute effectively to all aspects of the project.
 
-Week 4: Designing the User Interface and Kickstarting Development
 
+
+
+Week 4: Designing the User Interface and Kickstarting Development
 Purpose & Objectives:
+
 This week’s goal was to establish a clear, functional design for the application's user interface (UI) that serves both the customers (Burger Orderer) and kitchen staff (Kitchen View). The design would act as the blueprint for development, ensuring alignment between team members and guiding the technical implementation. A critical objective was to provide a user-friendly interface that intuitively supports order customization and processing.
 
 Detailed Process:
+
 I began by identifying the key features necessary for the application and how they would interact. The main interface, which I called the Burger Orderer View, needed to allow users to select a type of burger, apply customizations, and then proceed with placing or modifying the order. I sketched this interface with the following components:
 
 Burger Selection: I used radio buttons to enable the selection of a specific burger, ensuring that only one option can be chosen at a time, which simplifies the ordering process for the user.
-
 Customization Options: To offer flexibility, I included checkboxes next to customization options, such as additional ingredients, allowing users to customize their burger according to their preferences.
-
 Cart Section: A critical feature of this view is the cart, where users can review their selected burger and applied customizations. I designed this to include "Remove" and "Order" buttons, enabling users to either remove an item from the cart or finalize their order.
-
 In parallel, I designed the Kitchen View, which is intended for staff to efficiently process and manage orders. This view includes:
+
+BurgerOrderer-Drawing.png
+
+KitchenView-Drawing.png
+
 Order Display: A summarized list of each order, with the chosen burger and its customizations clearly separated, ensures the kitchen staff can quickly understand what needs to be prepared.
 
 Order Management: I incorporated a "Cancel Order" button, allowing staff to cancel incorrect or redundant orders, ensuring smoother kitchen operations.
-
 Once these wireframes were completed, I reviewed them critically to ensure all user interactions were intuitive and streamlined. I shared the designs with my group mate via our project management system, ensuring they had all the necessary documentation and explanations to proceed with coding.
 
 Collaboration & Team Workflow:
-Collaboration played a key role this week. After designing the wireframes, I ensured the sketches were detailed and annotated to avoid miscommunication. I actively engaged with my group mates to ensure they understood the functionality behind each UI element. This allowed them to begin coding the interface in alignment with the design specifications. We also had several follow-up discussions to adjust minor details and ensure we were on the same page, preventing future rework and maintaining efficiency. By clarifying the visual and functional requirements early on, we were able to avoid confusion and streamline the implementation process.
 
-images are displayed on canvas!
+Collaboration played a key role this week. After designing the wireframes, I ensured the sketches were detailed and annotated to avoid miscommunication. I actively engaged with my group mate to ensure they understood the functionality behind each UI element. This allowed them to begin coding the interface in alignment with the design specifications. We also had several follow-up discussions to adjust minor details and ensure we were on the same page, preventing future rework and maintaining efficiency. By clarifying the visual and functional requirements early on, we were able to avoid confusion and streamline the implementation process.
 
 Reflection:
+
 This week’s work underscored the importance of thorough planning in UI/UX design and clear communication within the team. The wireframes acted as a reference point throughout the week, reducing potential misalignments in our development phase. By breaking down the user experience into its core elements and ensuring that these elements were user-friendly and functional, we built a solid foundation for the development process. Additionally, this task enhanced my skills in translating abstract ideas into concrete designs and in ensuring the team's alignment through clear, consistent communication.
 
 Next Steps:
+
 Looking forward, the focus will be on refining the interface as my group mate implements the designs, testing the UI for user experience, and ensuring all interactions are smooth and efficient. I will continue to review and adjust the design based on feedback from both the team and any preliminary testing results.
 
-Week 5: Dynamic Order Display and Local Development
+ 
 
+Week 5: Dynamic Order Display and Local Development
 Summary of Work
 During Week 5, I focused on developing my own version of the application while choosing not to commit my changes to GitHub. My decision to work locally stemmed from a desire to minimize potential conflicts that can arise when multiple team members edit the same file. By isolating my work, I aimed to avoid inadvertently disrupting my teammates' progress or introducing bugs into the shared codebase. This strategy also allowed me to thoroughly debug and test the application, ensuring stability before integrating my code with the team’s work.
 
@@ -106,24 +124,83 @@ Another important aspect I addressed early on was handling situations where no o
 
 As the week progressed, I also worked on implementing asynchronous data fetching without reloading the entire page. Utilizing XMLHttpRequest, I was able to retrieve order data from the server dynamically. This approach not only enhanced the user experience by minimizing page reloads but also reduced server load by updating only the relevant parts of the page.
 
-I added to the existing code to ensure that the orders the user has made are displayed in the confirmation message. I started by ensuring that the order details could be stored in the session. When the user clicks the "Place Order" button, I included code that collects all information from the cart and stores it in a variable called final_order. Additionally, I created a variable named order_confirmed, which stores the confirmed order details so that they can be displayed on the page later.
+I added to the existing code to ensure that the orders the user has made are displayed in the confirmation message. I started by ensuring that the order details could be stored in the session. When the user clicks the "Place Order" button, I included code that collects all information from the cart and stores it in a variable called pending_order. Additionally, I created a variable named confirmed_order, which stores the confirmed order details so that they can be displayed on the page later.
 
 Commit Details
-I am going to commit this to GitHub. In app.py (BurgerOrderer), I added logic to store the confirmed order in a variable called confirmed_order after the user clicks "Place Order." This ensures that the final order is passed to the template for display. While this step is significant, I acknowledge that the code is not fully complete yet, as there are still important elements to add in the HTML.
+I committed this to GitHub. In app.py (BurgerOrderer), I added logic to store the confirmed order in a variable called confirmed_order after the user clicks "Place Order." This ensures that the final order is passed to the template for display. While this step is significant, I acknowledge that the code is not fully complete yet, as there are still important elements to add in the HTML.
 
 Despite my progress, I identified several challenges that I chose to defer until future iterations. One such issue was the lack of automatic updates for the order display. Users had to manually refresh the page to view new orders, which hindered real-time interaction. I recognized the need to implement a feature that automatically updates orders at regular intervals using setInterval, and I planned to tackle this in the coming week.
+
 Another problem I encountered during testing was that if the order container wasn’t cleared before rendering new orders, it could lead to duplication and confusion for users. This was particularly evident during my tests, where old orders remained visible alongside new ones. I aimed to address this issue by ensuring that the container was cleared before each update, which was essential for maintaining a clean and user-friendly interface.
 
 Additionally, I faced challenges with correctly parsing the JSON data sent from the server. Although the data was in a format that could be utilized by JavaScript, I initially struggled to implement the parsing logic correctly. This was a technical hurdle that I planned to address once the core functionality of the order display was stable.
 
-Reflections on Development Process
-Reflecting on my development process, I realized that my decision to work locally enabled me to debug and test thoroughly without interrupting my team’s workflow. However, looking back, I recognize that using a feature branch on GitHub would have allowed me to share my progress with the team while minimizing the risk of conflicts. By creating a separate branch, I could have pushed my code safely and provided my teammates with the opportunity to review my work, facilitating collaboration while still maintaining a clear separation between individual tasks.
+Debugging and Observations
+During the week, I encountered several debugging challenges, particularly with the dynamic order display and handling order data.
 
+Dynamic Order Display Debugging
+I started by setting breakpoints within the JavaScript code that handled the dynamic generation of order HTML. I checked that the orders array was being populated correctly, ensuring that each burger order was iterated over and displayed.
+
+Issue: The order was not displayed correctly because the data from the server wasn’t being parsed correctly.
+
+Resolution: I added console.log to track the server response and ensure the data was being processed correctly. This helped me identify that the server was sending data in a format that JavaScript could use, but I had forgotten to parse the data correctly before iterating through the orders.
+
+Observed Variables:
+orders (the array received from the server): Initially, it was an empty array because the parsing step was skipped.
+orderHTML (the string being built for each order): This variable held the HTML structure that was being dynamically created.
+Values and Changes:
+orders initially had no data, but once I parsed the data correctly, the array populated with order objects.
+orderHTML changed dynamically as I iterated over the array, creating a new HTML block for each order.
+Specific Line of Code Fixed:
+
+javascript
+Kopiera kod
+var orders = JSON.parse(response); // Ensured correct parsing of the response from the server
+Order Container Not Clearing
+I placed a breakpoint in the function responsible for rendering the new orders. I observed that the order container wasn't being cleared before adding new orders, which caused old orders to remain on the page.
+
+Issue: The old orders were still visible after rendering new ones, which led to duplicate orders being displayed.
+
+Solution: I used console.log to check the content of the order container before and after rendering new orders. This helped me realize that the container wasn’t being emptied before adding new data.
+
+Observed Variables:
+orderContainer (the DOM element holding all orders): It was not being cleared before the new orders were added.
+newOrders (the newly generated HTML): This variable was intended to replace the old content but ended up being appended to it instead.
+Values and Changes:
+orderContainer.innerHTML initially held the previous set of orders, which persisted because the code didn’t clear the content before appending the new order.
+After the fix, orderContainer.innerHTML = '' was called, ensuring the container was cleared before new content was added.
+Specific Line of Code Fixed:
+
+javascript
+Kopiera kod
+orderContainer.innerHTML = ''; // Clears the container before adding new orders
+Asynchronous Data Fetching with XMLHttpRequest
+I used breakpoints and logging to track the asynchronous request’s flow. The issue was that the page wasn’t updating until I manually refreshed it.
+
+Issue: Although the data was being fetched asynchronously, the page wasn’t updating automatically with the new orders after a request.
+
+Solution: I inspected the network requests in the browser’s developer tools and found that the requests were completing successfully, but the DOM wasn’t updating. I had missed adding a callback function to handle the response and update the DOM with the new orders.
+
+Observed Variables:
+response (the data received from the server): This held the newly fetched data.
+orderContainer (the DOM element displaying the orders): This variable should have been updated with the new data.
+Values and Changes:
+Initially, the response data was received but not processed to update the page.
+After adding the callback function to update the orderContainer, the page was automatically updated when new orders were fetched.
+Specific Line of Code Fixed:
+
+javascript
+Kopiera kod
+xhr.onreadystatechange = function() { if (xhr.readyState == 4 && xhr.status == 200) { orderContainer.innerHTML = ''; // Clear old content var orders = JSON.parse(xhr.responseText); orders.forEach(order => { // Append each order to the orderContainer orderContainer.innerHTML += generateOrderHTML(order); }); } }
 Summary
 In summary, during Week 5, I successfully resolved key issues such as dynamically generating order content, handling empty order lists, and implementing asynchronous data fetching. I also made significant progress in confirming order details and ensuring they are displayed properly. However, I deferred the implementation of real-time updates, clearing old orders, and effectively handling JSON data parsing to the following week. This approach allowed me to prioritize stability and ensure the application’s functionality was correct before integrating it with the shared codebase.
 
-Week 6: Implementing Real-Time Updates and Finalizing Development
 
+
+
+
+
+Week 6: Implementing Real-Time Updates and Finalizing Development
 Summary of Work
 In Week 6, I dedicated my efforts to resolving the remaining issues in my application and making necessary adjustments to the code. After addressing all outstanding problems, I successfully uploaded the complete code to GitHub, marking a significant milestone in the development process. This step not only allowed my teammates to access my work but also facilitated future collaboration as we moved toward completing the project.
 
@@ -149,6 +226,7 @@ As this was the final week of the project, I am excited about the potential for 
 Conclusion
 In summary, Week 6 was a productive culmination of my efforts, as I successfully implemented crucial features and uploaded the complete code to GitHub. The changes I made not only enhance the application’s functionality but also contribute to a more seamless collaborative environment moving forward. Additionally, based on a tip from the lab teacher, I added buttons between the BurgerOrderer and KitchenView to improve navigation. I designed these buttons to be visually appealing and easy to see, which further enhances the user experience by making it simpler to navigate between these components.
 
+
 Engineering Diary Update
 
 After submission, we implemented and refined several fixes in the BurgerOrderer and KitchenView apps to enhance order management and test handling.
@@ -160,3 +238,5 @@ For the BurgerOrderer app, my teammate and I created a test_app.py file for test
 Two failed tests: test_add_to_cart and test_remove_from_cart. These failed due to a discrepancy between expected (302) and actual (200) responses. We modified the code to expect a 200 response to verify the redirection and received the expected pass.
 One error in test_place_order, which was fixed by installing requests_mock. With these adjustments, all tests passed successfully, confirming the app’s functionality.
 These fixes have enhanced the robustness of the BurgerOrderer and KitchenView apps, particularly in managing order statuses and handling errors in various scenarios.
+
+I have add the new changes in week 5 where I talk variables I observed, their values, lines, etc.
