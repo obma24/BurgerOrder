@@ -1,4 +1,6 @@
-BurgerOrderer is an application where you can easily order and customize burgers, choose your favorite toppings, and then have the option to either remove from the cart or confirm the order. The confirmed orders are then sent directly to the kitchen.
+BurgerOrderer is an application where you can easily order and customize burgers, choose your favorite toppings, and then either remove items from the cart or confirm the order. The confirmed orders are then sent directly to the kitchen.
+
+This was a team project developed by me and four other students. I learned how important teamwork is — not just being good at coding, but also communicating clearly and collaborating with others to reach a common goal. Even though it was a small project, I learned a lot about planning tasks, sharing responsibilities, and supporting each other. This experience showed me that in the professional world, being a good developer also means being a good teammate.
 
 # This is how you start the application!
 
